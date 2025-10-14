@@ -1,0 +1,210 @@
+# Hexo Theme Fluid
+# https://github.com/fluid-dev/hexo-theme-fluid
+
+# ------------------------
+# 重要配置说明
+# 1. 所有路径均相对于站点根目录，而不是主题目录
+# 2. 所有图片资源请放到站点的 source 目录下，而不是主题目录
+# 3. 请使用英文冒号(:)和空格分隔键值对，不要使用制表符(\t)
+# 4. 请使用空格缩进，不要使用制表符(\t)
+# 5. 请使用 UTF-8 编码保存配置文件
+# ------------------------
+
+# 站点信息
+site:
+  # 站点标题
+  title: 褚成志个人博客
+  
+  # 站点副标题
+  subtitle: ''
+  
+  # 站点描述
+  description: ''
+  
+  # 站点关键词
+  keywords: ''
+  
+  # 作者信息
+  author: 褚成志
+  
+  # 语言
+  language: zh-CN
+  
+  # 时区
+  timezone: ''
+
+# 导航栏
+navbar:
+  # 导航栏菜单
+  menu:
+    - title: 首页
+      url: /
+      icon: icon-home-fill
+    - title: 归档
+      url: /archives/
+      icon: icon-archive-fill
+    - title: 分类
+      url: /categories/
+      icon: icon-category-fill
+    - title: 标签
+      url: /tags/
+      icon: icon-tags-fill
+    - title: 关于
+      url: /about/
+      icon: icon-user-fill
+  
+  # 导航栏右侧按钮
+  right_menu:
+    - title: 搜索
+      url: javascript:;
+      icon: icon-search
+      id: search-btn
+    - title: 暗色模式
+      url: javascript:;
+      icon: icon-dark
+      id: color-toggle-btn
+
+# 页脚
+footer:
+  # 页脚内容
+  content: |
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> 
+      <i class="iconfont icon-love"></i> 
+      <a href="https://hexo.fluid-dev.com/docs/guide/" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+
+# 首页
+index:
+  # 首页横幅
+  banner:
+    # 横幅图片路径
+    background: /img/banner.jpg
+    
+    # 横幅标题
+    title: 褚成志学习小站
+    
+    # 横幅副标题
+    subtitle: ''
+    
+    # 横幅按钮
+    buttons:
+      - title: 开始阅读
+        url: /archives/
+        color: primary
+
+# 文章页面
+post:
+  # 文章版权信息
+  copyright:
+    enable: true
+    content: |
+      <div class="license-box my-3">
+        <div class="license-title">
+          <div>{title}</div>
+          <div>{url}</div>
+        </div>
+        <div class="license-meta">
+          <div class="license-meta-item">
+            <div>作者</div>
+            <div>{author}</div>
+          </div>
+          <div class="license-meta-item license-meta-date">
+            <div>发布于</div>
+            <div>{date}</div>
+          </div>
+          <div class="license-meta-item">
+            <div>许可协议</div>
+            <div>
+              <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                  <i class="iconfont icon-by"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="license-icon iconfont"></div>
+      </div>
+
+# 代码高亮
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+
+# 数学公式支持
+math:
+  enable: false
+  specific: false
+  engine: mathjax
+
+# 搜索功能
+search:
+  enable: true
+  type: local
+  path: /local-search.xml
+
+# 评论系统
+comments:
+  enable: false
+  type: disqus
+
+# 统计分析
+analytics:
+  enable: false
+  type: google
+  google:
+    tracking_id: ''
+
+# 社交链接
+social:
+  enable: true
+  links:
+    - title: 知乎
+      url: https://www.zhihu.com/people/chuchengzhi
+      icon: icon-zhihu-fill
+    - title: 稀土掘金
+      url: https://juejin.cn/user/2760229297353692
+      icon: icon-juejin
+    - title: 博客园
+      url: https://www.cnblogs.com/chucz
+      icon: icon-cnblogs
+    - title: CSDN
+      url: https://blog.csdn.net/livecityccz
+      icon: icon-csdn
+    - title: 微信公众号
+      url: /img/gongzhonghao.jpg
+      icon: icon-wechat-fill
+
+# 自定义CSS和JS
+custom:
+  css:
+    - /custom/css/tags.css
+  js:
+    - /custom/js/tags.js
+
+# 其他配置
+misc:
+  # 返回顶部按钮
+  back_to_top:
+    enable: true
+    sidebar: false
+    duration: 100
+
+  # 字数统计
+  wordcount:
+    enable: false
+
+  # 图片懒加载
+  lazyload:
+    enable: true
+    loading_img: /img/loading.gif
+
+  # 平滑滚动
+  smooth_scroll:
+    enable: true
+    duration: 500

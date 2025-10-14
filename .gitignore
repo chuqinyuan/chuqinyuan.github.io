@@ -1,0 +1,52 @@
+# Hexo生成的文件
+public/
+.deploy*/
+.deploy_public/
+db.json
+
+# 编辑器和IDE相关文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# npm相关
+node_modules/
+# 注意：不要忽略package-lock.json，它是依赖锁文件，确保依赖版本一致
+yarn.lock
+.npm/
+
+# Git相关
+.git/
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Hexo配置备份文件
+_config.yml.*
+
+# 测试文件和临时文件
+tmp/
+temp/
+test/
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# GitHub Actions相关
+.github/workflows/*.tmp
+.github/workflows/*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+ehthumbs_vista.db
+*.stackdump
+*.lnk
+*.bak
