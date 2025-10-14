@@ -17,7 +17,7 @@ title: 关于
 - **数据库**: MySQL, PostgreSQL, Redis
 - **中间件**: Kafka, Zookeeper, Consul
 - **容器化**: Docker, Kubernetes
-- **云服务**: AWS, 阿里云
+- **云服务**: 阿里云，华为云，AWS
 
 ## 学习理念
 
