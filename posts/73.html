@@ -21,7 +21,7 @@
     <meta name="description" content="Excel文件也称作工作簿（Workbook），一个工作簿中可以包含多张工作表（Worksheet），本文使用EasyExcel来操作一张或多张工作表。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EasyExcel工作表操作">
-<meta property="og:url" content="https://www.chucz.asia/posts/73.html">
+<meta property="og:url" content="https://www3.chucz.asia/posts/73.html">
 <meta property="og:site_name" content="褚成志个人博客">
 <meta property="og:description" content="Excel文件也称作工作簿（Workbook），一个工作簿中可以包含多张工作表（Worksheet），本文使用EasyExcel来操作一张或多张工作表。">
 <meta property="og:locale" content="zh_CN">
@@ -81,7 +81,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"www.chucz.asia","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":false},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"www3.chucz.asia","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":false},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -1181,7 +1181,7 @@
 <p>执行了上述判断以后，在<code>doWrite</code>方法中使用<code>excelWriter</code>依次调用了<code>write</code>和<code>finish</code>方法。其中<code>write</code>方法的作用是将数据写入到 Excel 文件中，<code>finish</code>方法是关闭文件资源流（毕竟写入到 Excel 操作属于文件 IO 操作），这一轮循环执行结束。</p>
 <p>进行下一轮循环的时候，仍然执行上述的代码逻辑，数据再次写入 Excel 文件时，会覆盖掉上一次的 Excel 数据，以此类推，当循环结束时，Excel 文件中的内容是最后一次循环写入的数据。</p>
 <h2 id="1-2-解决方案"><a href="#1-2-解决方案" class="headerlink" title="1.2 解决方案"></a>1.2 解决方案</h2><p>在循环中直接使用链式调用并不能达到效果，那么还有其他解决方案吗？</p>
-<p>当然有！我们在<a href="https://www.chucz.asia/posts/60.html#%E6%96%B9%E5%BC%8F%E4%B8%89%EF%BC%9Atry-with-resources%E5%86%99%E6%B3%95%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EJDK-7%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%89">前面</a>学过 try-with-resources 方式实现将数据写入到 Excel 文件中，这种方式的特点是在保证整个 try 块代码没有出现异常时，在整个 try 块代码执行完成后，自动关闭文件资源流，在循环过程中不涉及到数据覆盖的操作。</p>
+<p>当然有！我们在<a href="https://www3.chucz.asia/posts/60.html#%E6%96%B9%E5%BC%8F%E4%B8%89%EF%BC%9Atry-with-resources%E5%86%99%E6%B3%95%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EJDK-7%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%89">前面</a>学过 try-with-resources 方式实现将数据写入到 Excel 文件中，这种方式的特点是在保证整个 try 块代码没有出现异常时，在整个 try 块代码执行完成后，自动关闭文件资源流，在循环过程中不涉及到数据覆盖的操作。</p>
 <p>以下是使用 try-with-resources 方式的实现思路：</p>
 <ol>
 <li>在 try 小括号中创建 ExcelWriter 类型对象<code>excelWriter</code>：因为 ExcelWriter 类实现了 Closeable 接口，在 try 块执行完毕时，会自动调用<code>close</code>方法关闭文件资源流。</li>
@@ -1201,7 +1201,7 @@
 <p>已知 Employee 实体类和 EmployeeUtils 实体类已经准备好：<a href="">点我查看</a></p>
 <p><img src="/img/240511001.gif" srcset="/img/loading.gif" lazyload></p>
 </blockquote>
-<p><a href="https://www.chucz.asia/posts/60.html#%E4%BA%8C%E3%80%81Excel%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86">前面</a>我们提到过，一个 Excel 文件称作一个工作簿（Workbook），在一个工作簿中可以包含多张工作表（Worksheet）。我们在前面向 Excel 中写数据时，一般是一个对象写入到一个工作表中。但有的时候，我们需要向多个工作表中插入数据。</p>
+<p><a href="https://www3.chucz.asia/posts/60.html#%E4%BA%8C%E3%80%81Excel%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86">前面</a>我们提到过，一个 Excel 文件称作一个工作簿（Workbook），在一个工作簿中可以包含多张工作表（Worksheet）。我们在前面向 Excel 中写数据时，一般是一个对象写入到一个工作表中。但有的时候，我们需要向多个工作表中插入数据。</p>
 <p><img src="/img/image-20240320091713015_1.png" srcset="/img/loading.gif" lazyload></p>
 <p>EasyExcel 在处理多个工作表时，类似数组的索引，会将第一张要操作的工作表标记为 0，第二张要操作的工作表标记为 1，以此类推（如下图）：</p>
 <p><img src="/img/easyexcel%E5%A4%84%E7%90%86%E5%A4%9A%E5%BC%A0%E5%B7%A5%E4%BD%9C%E8%A1%A81.png" srcset="/img/loading.gif" lazyload></p>
@@ -1323,7 +1323,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>EasyExcel工作表操作</div>
-      <div>https://www.chucz.asia/posts/73.html</div>
+      <div>https://www3.chucz.asia/posts/73.html</div>
     </div>
     <div class="license-meta">
       
